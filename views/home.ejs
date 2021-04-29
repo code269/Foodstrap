@@ -13,9 +13,10 @@
       <li>
         Title: <%= recipe.title %> | Cuisine: <%= recipe.cuisine %> |
         Description: <%= recipe.description %> |
-        <a href="/<%= recipe._id %>">See More</a>
+        <a href="/recipes/<%= recipe._id %>">See More</a>
       </li>
       <% } %>
     </ul>
+    <a href="/new">New</a>
   </body>
 </html>

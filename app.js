@@ -19,18 +19,27 @@ db.once('open', () => {
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+//Parsing body
+app.use(express.urlencoded({ extended: true }));
+
 app.get('/', async (req, res) => {
   const recipes = await Recipe.find({});
   res.render('home', { recipes });
 });
 
-app.get('/:id', async (req, res) => {
+app.get('/recipes/:id', async (req, res) => {
   const recipe = await Recipe.findById(req.params.id);
   res.render('posts/showRecipe', { recipe });
 });
 
 app.get('/new', (req, res) => {
   res.render('posts/newRecipe');
+});
+
+app.post('/newRecipe', async (req, res) => {
+  const recipe = new Recipe(req.body.newRecipe);
+  await recipe.save();
+  res.redirect(`/recipes/${recipe._id}`);
 });
 
 app.listen(3000, () => {
