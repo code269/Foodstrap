@@ -24,6 +24,15 @@ app.get('/', async (req, res) => {
   res.render('home', { recipes });
 });
 
+app.get('/:id', async (req, res) => {
+  const recipe = await Recipe.findById(req.params.id);
+  res.render('posts/showRecipe', { recipe });
+});
+
+app.get('/new', (req, res) => {
+  res.render('posts/newRecipe');
+});
+
 app.listen(3000, () => {
   console.log('Listening on port 3000...');
 });

@@ -12,7 +12,8 @@
       <% for (let recipe of recipes) { %>
       <li>
         Title: <%= recipe.title %> | Cuisine: <%= recipe.cuisine %> |
-        Description: <%= recipe.description %>
+        Description: <%= recipe.description %> |
+        <a href="/<%= recipe._id %>">See More</a>
       </li>
       <% } %>
     </ul>
