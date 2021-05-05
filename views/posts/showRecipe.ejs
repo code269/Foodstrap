@@ -12,6 +12,7 @@
       <li>Prep Time: <%= !recipe.prepTime ? recipe.prepTime : "N/A" %></li>
       <li>Description: <%= recipe.description %></li>
     </ul>
+    <a href="/recipes/<%= recipe._id %>/edit">Edit</a>
     <a href="/">Home</a>
   </body>
 </html>
