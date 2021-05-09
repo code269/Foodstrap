@@ -36,8 +36,9 @@ form.example::after {
 
 .centered1 {
   position: absolute;
-  top: 5%;
-  left: 25%;
+  top: 4.5%;
+  left: 12%;
+
   width: 50%;
   ;
 }
