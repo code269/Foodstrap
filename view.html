@@ -5,47 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FoodStrap</title>
+    <link href="imgs/logo.png" rel="icon" type="image/x-icon"/>
 	<meta name="author" content="">
     <meta name="description" content="">
-
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        .body-bg {
-            background-color: rgb(255,99,71);
-            background-image: linear-gradient(315deg, #FF6347 0%, #5f72be 74%);
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="dd.css" rel="stylesheet">
 </head>
 
    <div class="max-w-screen-xl mx-auto">
     <!-- header -->
     <header class="flex items-center justify-between py-2 border-b">
-      <a href="#" class="px-2 lg:px-0 uppercase font-bold text-purple-800">
-        FoodStrap
-      </a>
+      <a href ="account.html"><img class="logo" src="imgs/logo.png" alt="logo" style="height:80px; margin-top: 5px; margin-bottom: 5px; margin-right: 30px; margin-left: 5px"/></a>
+    <!--search box-->
+        <form class="example centered1" action="/action_page.php" style="margin-left: 20px">
+		<input type="text" placeholder="Search Recipe.." name="search">
+		<button type="submit"><i class="fa fa-search"></i></button>
+	   </form>
+    <!--nav-->
       <ul class="inline-flex items-center">
-        
-        <li class="px-2 md:px-4">
-          <a href="index.html" class="text-purple-600 font-semibold hover:text-purple-500"> Home </a>
-        </li>
-        <!--<li class="px-2 md:px-4">
-          <a href="" class="text-gray-500 font-semibold hover:text-purple-500"> About </a>
-        </li>
-        <li class="px-2 md:px-4">
-          <a href="" class="text-gray-500 font-semibold hover:text-purple-500"> Press </a>
-        </li>
-        <li class="px-2 md:px-4">
-          <a href="" class="text-gray-500 font-semibold hover:text-purple-500"> Contact </a>
-        </li>-->
         <li class="px-2 md:px-4 hidden md:block">
-          <a href="login.html" class="text-gray-500 font-semibold hover:text-purple-500"> Login </a>
+          <a href="account.html" class="text-gray-500 font-semibold hover:text-red-500"> Home </a>
         </li>
-        <li class="px-2 md:px-4 hidden md:block">
-          <a href="signup.html" class="text-gray-500 font-semibold hover:text-purple-500"> Sign Up </a>
+        <li class="px-2 md:px-4" style="margin-right:10px">
+          <a href="signup.html" class="text-gray-500 font-semibold hover:text-red-500"> Post Recipe </a>
         </li>
-      </ul>
+        <div class="relative hover-trigger" style="margin-right: 5px">
+        <button class="block h-12 w-12 rounded-full overflow-hidden focus:outline-none">
+      <img class="h-full w-full object-cover" src="https://eu.ui-avatars.com/api/?name=John&size=1000" alt="avatar">
+    </button>
+      <div class="absolute px-6 py-2 hover-target">
+       <div class="absolute right-0 w-40 mt-2 py-1 bg-white border rounded shadow-xl">   
+      <a href="index.html" class="transition-colors duration-200 block px-4 py-2 text-normal text-gray-900 rounded hover:bg-red-500 hover:text-white">Logout</a>
+  </div>
+      </div>
+        </div>
+        <style>
+        .hover-trigger .hover-target {
+            display: none;
+        }
 
+        .hover-trigger:hover .hover-target {
+            display: block;
+        }
+        </style>
+      </ul>
     </header>
     <!-- header ends here -->
 
@@ -71,6 +76,10 @@
                 <p class="font-semibold text-gray-200 text-sm"> Mike Sullivan </p>
                 <p class="font-semibold text-gray-400 text-xs"> 14 Aug </p>
               </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                  <i class="fa fa-heart" style="font-size:35px;color:red"></i><p class="font-semibold text-white text-sm capitalize" style="margin-left: 10px; margin-top: 6px"> 3 Likes </p>
+                <p class="font-semibold text-white text-sm capitalize" style="margin-left: 10px; margin-top: 6px" > 10 comments </p>
+
             </div>
           </div>
         </a>
@@ -262,25 +271,22 @@
     <!-- main ends here -->
 
     <!-- footer -->
-    <footer class="border-t mt-32 pt-12 pb-32 px-4 lg:px-0">
+    <footer class="border-t mt-32 pt-12 pb-32 px-4 lg:px-0" style="margin-top: 60px;">
       <div class="flex">
 
         <div class="w-full md:w-1/3 lg:w-1/4">
           <h6 class="font-semibold text-gray-700 mb-4">Company</h6>
           <ul>
             <li> <a href="" class="block text-gray-600 py-2">Team</a> </li>
-            <li> <a href="" class="block text-gray-600 py-2">About us</a> </li>
-            <li> <a href="" class="block text-gray-600 py-2">Press</a> </li>
+            <li> <a href="" class="block text-gray-600 py-2">About Us</a> </li>
           </ul>
         </div>
 
         <div class="w-full md:w-1/3 lg:w-1/4">
           <h6 class="font-semibold text-gray-700 mb-4">Content</h6>
           <ul>
-            <li> <a href="" class="block text-gray-600 py-2">Blog</a> </li>
             <li> <a href="" class="block text-gray-600 py-2">Privacy Policy</a> </li>
             <li> <a href="" class="block text-gray-600 py-2">Terms & Conditions</a> </li>
-            <li> <a href="" class="block text-gray-600 py-2">Documentation</a> </li>
           </ul>
         </div>
 
