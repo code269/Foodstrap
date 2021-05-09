@@ -15,18 +15,18 @@
 	<link href="dd.css" rel="stylesheet">
   <link href="post_recipe.css" rel="stylesheet">
 	
-    <style>
+   <!-- <style>
         .body-bg {
             background-color: rgb(255,99,71);
             background-image: linear-gradient(315deg, #FF6347 0%, #5f72be 74%);
         }
-    </style>
+    </style> -->
 </head>
 
    <div class="max-w-screen-xl mx-auto">
     <!-- header -->
-    <header class="flex items-center justify-between py-2 border-b">
-        <a href ="index.html"><img class="logo" src="logo.png" alt="logo" style="height:80px; margin-top: 5px; margin-bottom: 5px; margin-right: 30px; margin-left: 5px"/></a>
+    <header class="flex items-center justify-between py-2 border-b " >
+        <a href ="index.html"><img class="logo" src="imgs/logo.png" alt="logo" style="height:80px; margin-top: 5px; margin-bottom: 5px; margin-right: 30px; margin-left: 5px"/></a>
 	<!--search box-->
        <form class="example centered1" action="/action_page.php">
 		<input type="text" placeholder="Search recipe.." name="search">
@@ -40,6 +40,9 @@
         <li class="px-2 md:px-4">
           <a href="signup.html" class="text-gray-500 font-semibold hover:text-red-500"> Sign Up </a>
         </li>
+        <li class="px-2 md:px-4">
+          <a href="post_recipe.html" class="btn btn-primary" role="button" data-bs-toggle="button">Post Recipe</a>
+        </li>
       </ul>
     </header>
     <!-- header ends here -->
@@ -47,250 +50,95 @@
 		
        
     <main class="mt-10" style="margin-top: 30px;">
-      <h2 class="px-2 lg:px-0 uppercase font-bold text-red-500 text-4xl">
-              Post Recipe
-            </h2><br>
-      <div class="block md:flex md:space-x-2 px-2 lg:p-0">
-        <a 
-          class="mb-4 md:mb-0 w-full md:w-1/4 relative rounded inline-block" 
-          style="height: 24em;"
-          href="view.html"
-        >
-          <div class="absolute left-0 bottom-0 w-full h-full z-10"
-            style="background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.7));"></div>
-          <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" class="absolute left-0 top-0 w-full h-full rounded z-0 object-cover" />
-          <div class="p-4 absolute bottom-0 left-0 z-20">
-            <span class="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">25 Minutes</span>
-            <h2 class="text-4xl font-semibold text-gray-100 leading-tight">
-              Pellentesque a consectetur velit.
-            </h2>
-            <div class="flex mt-3">
-              <img src="https://randomuser.me/api/portraits/men/97.jpg"
-                class="h-10 w-10 rounded-full mr-2 object-cover" />
-              <div>
-                <p class="font-semibold text-gray-200 text-sm"> Mike Sullivan </p>
-                <p class="font-semibold text-gray-400 text-xs"> 14 Aug </p>
-              </div>
-            </div>
-          </div>
-        </a>
-
-          <a 
-          class="mb-4 md:mb-0 w-full md:w-1/4 relative rounded inline-block" 
-          style="height: 24em;"
-          href="view.html"
-        >
-          <div class="absolute left-0 bottom-0 w-full h-full z-10"
-            style="background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.7));"></div>
-          <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" class="absolute left-0 top-0 w-full h-full rounded z-0 object-cover" />
-          <div class="p-4 absolute bottom-0 left-0 z-20">
-            <span class="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">25 Minutes</span>
-            <h2 class="text-4xl font-semibold text-gray-100 leading-tight">
-              Pellentesque a consectetur velit.
-            </h2>
-            <div class="flex mt-3">
-              <img src="https://randomuser.me/api/portraits/men/97.jpg"
-                class="h-10 w-10 rounded-full mr-2 object-cover" />
-              <div>
-                <p class="font-semibold text-gray-200 text-sm"> Mike Sullivan </p>
-                <p class="font-semibold text-gray-400 text-xs"> 14 Aug </p>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a 
-          class="mb-4 md:mb-0 w-full md:w-1/4 relative rounded inline-block" 
-          style="height: 24em;"
-          href="view.html"
-        >
-          <div class="absolute left-0 bottom-0 w-full h-full z-10"
-            style="background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.7));"></div>
-          <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" class="absolute left-0 top-0 w-full h-full rounded z-0 object-cover" />
-          <div class="p-4 absolute bottom-0 left-0 z-20">
-            <span class="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">25 Minutes</span>
-            <h2 class="text-4xl font-semibold text-gray-100 leading-tight">
-              Pellentesque a consectetur velit.
-            </h2>
-            <div class="flex mt-3">
-              <img src="https://randomuser.me/api/portraits/men/97.jpg"
-                class="h-10 w-10 rounded-full mr-2 object-cover" />
-              <div>
-                <p class="font-semibold text-gray-200 text-sm"> Mike Sullivan </p>
-                <p class="font-semibold text-gray-400 text-xs"> 14 Aug </p>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a class="w-full md:w-1/4 relative rounded" 
-          style="height: 24em;"
-          href="view.html">
-          <div class="absolute left-0 top-0 w-full h-full z-10"
-            style="background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.7));"></div>
-          <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1301&q=80" class="absolute left-0 top-0 w-full h-full rounded z-0 object-cover" />
-          <div class="p-4 absolute bottom-0 left-0 z-20">
-            <span class="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">10 Minutes</span>
-            <h2 class="text-3xl font-semibold text-gray-100 leading-tight">Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit.</h2>
-            <div class="flex mt-3">
-              <img
-                src="https://images-na.ssl-images-amazon.com/images/M/MV5BODFjZTkwMjItYzRhMS00OWYxLWI3YTUtNWIzOWQ4Yjg4NGZiXkEyXkFqcGdeQXVyMTQ0ODAxNzE@._V1_UX172_CR0,0,172,256_AL_.jpg"
-                class="h-10 w-10 rounded-full mr-2 object-cover" />
-              <div>
-                <p class="font-semibold text-gray-200 text-sm"> Chrishell Staus </p>
-                <p class="font-semibold text-gray-400 text-xs"> 15 Aug </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </a>
-
-
-        <!-- form starts here -->
+      <h2 class="px-2 lg:px-0 uppercase font-bold text-red-500 text-4xl">Post Recipe</h2><br>
+      <!-- top part starts here-->
       <div class="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10">
-        <div class="col">
-            <h3>Help us improve our service for your best experience. </h3>
-            
-            
-            <form id="post_recipe" action="thankYouPage.html" method="post" >
+        <!-- form starts here -->
+      
+        <div class="col-8 text-gray-600 font-bold" >
+        
+            <form style="width: auto;" id="post_recipe" action="" method="post" >
               <div class="form-row">
                 <div class="col-12">
-                  <label for = "recipe_title" > Title: </label>
-                  <input type="text" class="form-control" id="myFName" name="myFName" placeholder="Enter the title of your recipe" value="" pattern="[a-zA-Z]+" required><br>
+                  <label for = "recipe_title " > Title: </label>
+                  <input type="text" class="form-control text-gray-600" id="recipe_title" name="recipe_title" placeholder="Enter the title of your recipe"  pattern="[a-zA-Z]+" required><br>
                </div>
 
                <div class="col-12">
                 <label for = "description">Description:</label>
-                <textarea type="text"  class="form-control"id="description" name="description" placeholder="Add description"> </textarea><br>
+                <textarea type="text"  class="form-control"id="description" name="description" placeholder="Add description for your recipe"> </textarea><br>
               </div>
                     
                 <div class="col-12">
-                <label for = "myFName">Ingredients:</label>
-                <textarea type="text"  class="form-control"id="description" name="description" placeholder="Add description"> </textarea><br>
+                <label for = "ingredients">Ingredients:</label>
+                <textarea type="text"  class="form-control"id="ingredients" name="ingredients" placeholder="Add ingredients"> </textarea><br>
               </div>
               <div class="col-12">
-                <label for = "myFName">Allergens:</label>
-                <select class="custom-select">
+                <label for = "allergens">Allergens:</label>
+                <select class="custom-select" id="allergens">
                   <option selected>Choose possible allergens</option>
+                  <option value="egg">Egg</option>
+                  <option value="fish">Fish</option>
+                  <option value="milk">Milk</option>  
                   <option value="peanuts">Peanuts</option>
+                  <option value="shellfish">Shellfish</option>
                   <option value="soy">Soy</option>
                   <option value="tree_nuts">Tree Nuts</option>
-                  <option value="shellfish">Shellfish</option>
-                  <option value="fish">Fish</option>
-                  <option value="milk">Milk</option>
-                  <option value="egg">Egg</option>  
                 </select> <br>
                 <label ></label>
               </div> 
               <div class="col-12">
-                <label for = "myLName">Steps:</label>  
-                <input type="text" class="form-control" id="myLName" name="myLName" placeholder="Enter in your last name" value="" pattern="[a-zA-Z]+" required><br>
+                <label for = "meal_Type">Meal Type:</label>
+                <select class="custom-select" id="allergens">
+                  <option selected>Choose a type of your meal</option>
+                  <option value="appetizers">Appetizers</option>
+                  <option value="breakfast">Breakfast</option>
+                  <option value="dessert">Dessert</option>
+                  <option value="dinner">Dinner</option>
+                  <option value="lunch">Lunch</option>
+                  <option value="side_dishes">Side Dishes</option>
+                  <option value="snacks">Snacks</option>  
+                </select> <br>
+                <label ></label>
+              </div> 
+              <div class="col-12">
+                <label for = "steps">Steps:</label>  
+                <input type="text" class="form-control" id="steps" name="steps" placeholder="Enter cooking steps" value="" pattern="[a-zA-Z]+" required><br>
               </div>
               
               <div class="col-12"> 
-                <label for = "myPhone">Cuisine:</label>
-                <input type="text" class="form-control" id="cuisine" name="myPhone" placeholder="Enter cuisine type" 
-                pattern="[a-zA-Z]+" ><br>
+                <label for = "cuisine">Cuisine:</label>
+                <input type="text" class="form-control" id="cuisine" name="cuisine" placeholder="Enter cuisine type" pattern="[a-zA-Z]+" ><br>
               </div>
                 <div class="col-4" class="form-row">
-                  <label for="cookTime">Cook Time:</label>
+                  <label>Cook Time:</label>
                   <input type="text" class="form-control" id="hours" placeholder="Hours">
                   <input type="text" class="form-control" id="minutes" placeholder="Minutes"> <br>
                 </div>
                 
 
                 <div class="col-12 mb-3">
-                  <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+                  <label for="formFileMultiple" class="form-label">Attach a picture</label>
                   <input class="form-control" type="file" id="formFileMultiple" multiple>
                 </div>
               </div>
-                <input type="submit"  class="form-control" value="Post recipe" >
+
+                <button type="submit"  class="btn font-bold bg-red-500 w-full text-gray-200" value="Post recipe">Post recipe</button>
 
             </form>
         </div>
-
-
+          
+        <!-- form ends here -->
         <!-- right sidebar -->
-        <div class="w-full lg:w-1/3 px-3">
-          <!-- topics -->
-          <div class="mb-4">
-            <h5 class="font-bold text-lg uppercase text-gray-700 px-1 mb-2"> Cuisines </h5>
-            <ul>
-              <li class="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
-                <a href="#" class="flex items-center text-gray-600 cursor-pointer">
-                  <span class="inline-block h-4 w-4 bg-red-600 mr-3"></span>
-                  Nutrition
-                  <span class="text-gray-500 ml-auto">23 posts</span>
-                  <i class='text-gray-500 bx bx-right-arrow-alt ml-1'></i>
-                </a>
-              </li>
-              <li class="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
-                <a href="#" class="flex items-center text-gray-600 cursor-pointer">
-                  <span class="inline-block h-4 w-4 bg-red-500 mr-3"></span>
-                  Food & Diet
-                  <span class="text-gray-500 ml-auto">18 posts</span>
-                  <i class='text-gray-500 bx bx-right-arrow-alt ml-1'></i>
-                </a>
-              </li>
-              <li class="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
-                <a href="#" class="flex items-center text-gray-600 cursor-pointer">
-                  <span class="inline-block h-4 w-4 bg-red-400 mr-3"></span>
-                  Workouts
-                  <span class="text-gray-500 ml-auto">34 posts</span>
-                  <i class='text-gray-500 bx bx-right-arrow-alt ml-1'></i>
-                </a>
-              </li>
-              <li class="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
-                <a href="#" class="flex items-center text-gray-600 cursor-pointer">
-                  <span class="inline-block h-4 w-4 bg-red-300 mr-3"></span>
-                  Immunity
-                  <span class="text-gray-500 ml-auto">9 posts</span>
-                  <i class='text-gray-500 bx bx-right-arrow-alt ml-1'></i>
-                </a>
-              </li>
-            </ul>
+        <div class="w-full lg:w-1/3 px-3"> 
+          <div class="mb-4 py-4">
+            <img class="post_recipe_blank_sheet" src="imgs/post_recipe_blank_sheet.jpg" alt="post_recipe_blank_sheet">
           </div>
             
-            <div class="mb-4">
-            <h5 class="font-bold text-lg uppercase text-gray-700 px-1 mb-2"> Allergies </h5>
-            <ul>
-              <li class="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
-                <a href="#" class="flex items-center text-gray-600 cursor-pointer">
-                  <span class="inline-block h-4 w-4 bg-red-600 mr-3"></span>
-                  Nutrition
-                  <span class="text-gray-500 ml-auto">23 posts</span>
-                  <i class='text-gray-500 bx bx-right-arrow-alt ml-1'></i>
-                </a>
-              </li>
-              <li class="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
-                <a href="#" class="flex items-center text-gray-600 cursor-pointer">
-                  <span class="inline-block h-4 w-4 bg-red-500 mr-3"></span>
-                  Food & Diet
-                  <span class="text-gray-500 ml-auto">18 posts</span>
-                  <i class='text-gray-500 bx bx-right-arrow-alt ml-1'></i>
-                </a>
-              </li>
-              <li class="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
-                <a href="#" class="flex items-center text-gray-600 cursor-pointer">
-                  <span class="inline-block h-4 w-4 bg-red-400 mr-3"></span>
-                  Workouts
-                  <span class="text-gray-500 ml-auto">34 posts</span>
-                  <i class='text-gray-500 bx bx-right-arrow-alt ml-1'></i>
-                </a>
-              </li>
-              <li class="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
-                <a href="#" class="flex items-center text-gray-600 cursor-pointer">
-                  <span class="inline-block h-4 w-4 bg-red-300 mr-3"></span>
-                  Immunity
-                  <span class="text-gray-500 ml-auto">9 posts</span>
-                  <i class='text-gray-500 bx bx-right-arrow-alt ml-1'></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <!-- divider -->
-          <div class="border border-dotted"></div>
+            <!-- divider -->
+          <div class="border border-dotted"></div> 
 
-          <!-- subscribe -->
+          <!--subscribe -->
           <div class="p-1 mt-4 mb-4">
             <h5 class="font-bold text-lg uppercase text-gray-700 mb-2"> Join Our Email List </h5>
             <p class="text-gray-600">
@@ -301,13 +149,12 @@
             <button class="px-4 py-2 bg-red-500 text-gray-200 rounded-b w-full capitalize tracking-wide">
               Subscribe
             </button>
-          </div>
+          </div> 
 
           <!-- divider -->
           <div class="border border-dotted"></div>
-
-        </div>
-
+             
+        </div> 
       </div>
     </main>
     <!-- main ends here -->
