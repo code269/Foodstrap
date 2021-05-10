@@ -1,43 +1,47 @@
 /* Style the search field */
-/* Style the search field */
-form.example input[type=text] {
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-  width: 90%;
-  background: white;
-  
-}
+	/* Style the search field */
+	form.example input[type=text] {
+	  padding: 10px;
+	  font-size: 17px;
+	  border: 1px solid grey;
+	  float: left;
+	  width: 90%;
+	  background: white;
+	  
+	}
+	
 
-/* Style the submit button */
-form.example button {
-  float: left;
-  width: 10%;
-  padding: 10px;
-  background: grey;
-  color: white;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none; /* Prevent double borders */
-  cursor: pointer;
-}
+	/* Style the submit button */
+	form.example button {
+	  float: left;
+	  width: 10%;
+	  padding: 10px;
+	  background: grey;
+	  color: white;
+	  font-size: 17px;
+	  border: 1px solid grey;
+	  border-left: none; /* Prevent double borders */
+	  cursor: pointer;
+	}
+	
 
-form.example button:hover {
-  background: rgb(255,99,71);
-}
+	form.example button:hover {
+	  background: rgb(255,99,71);
+	}
+	
 
-/* Clear floats */
-form.example::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+	/* Clear floats */
+	form.example::after {
+	  content: "";
+	  clear: both;
+	  display: table;
+	}
+	
 
-.centered1 {
-  position: absolute;
-  top: 5%;
-  left: 25%;
-  width: 50%;
-  ;
-}
+	.centered1 {
+	  position: absolute;
+	  top: 5%;
+	  left: 25%;
+	  width: 50%;
+	  ;
+	}

@@ -5,32 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FoodStrap</title>
-    <link href="imgs/logo.png" rel="icon" type="image/x-icon"/>
-	<meta name="author" content="">
+    <link href="imgs/logo.png" rel="icon" type="image/x-icon" />
+	<meta name="Team FoodStrap" content="">
     <meta name="description" content="">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="dd.css" rel="stylesheet">
 </head>
-
+<!--banner-->
+    <div class="bg-red-500">
+  <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between flex-wrap">
+      <div class="w-0 flex-1 flex items-center">
+        <span class="flex p-2 rounded-lg bg-red-600">
+          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+          </svg>
+        </span>
+        <p class="ml-3 font-medium text-white truncate">
+          <span class="md:hidden">
+            New updates!
+          </span>
+          <span class="hidden md:inline">
+            Coming Soon, upgrade your account to premium!
+          </span>
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</div>
    <div class="max-w-screen-xl mx-auto">
     <!-- header -->
     <header class="flex items-center justify-between py-2 border-b">
-      <a href ="account.html"><img class="logo" src="imgs/logo.png" alt="logo" style="height:80px; margin-top: 5px; margin-bottom: 5px; margin-right: 30px; margin-left: 5px"/></a>
+      <a href ="account.html"><img class="logo" src="imgs/logo.png" alt="logo" style="height:80px; margin-top: 5px; margin-bottom: 5px; margin-right: 30px; margin-left: 5px"/></a> 
     <!--search box-->
-        <form class="example centered1" action="/action_page.php" style="margin-left: 20px">
+        <form class="example centered1" action="/action_page.php" style="margin-top: 60px; margin-left: 20px">
 		<input type="text" placeholder="Search Recipe.." name="search">
 		<button type="submit"><i class="fa fa-search"></i></button>
 	   </form>
     <!--nav-->
       <ul class="inline-flex items-center">
-
         <li class="px-2 md:px-4 hidden md:block">
-          <a href="account.html" class="text-gray-500 font-semibold hover:text-red-500"> Home </a>
+          <a href="" class="text-gray-500 font-semibold hover:text-red-500"> Home </a>
         </li>
         <li class="px-2 md:px-4" style="margin-right:10px">
-          <a href="signup.html" class="text-gray-500 font-semibold hover:text-red-500"> Post Recipe </a>
+          <a href="post_recipe.html" class="text-gray-500 font-semibold hover:text-red-500"> Post Recipe </a>
         </li>
         <div class="relative hover-trigger" style="margin-right: 5px">
         <button class="block h-12 w-12 rounded-full overflow-hidden focus:outline-none">
@@ -54,7 +75,104 @@
       </ul>
     </header>
     <!-- header ends here -->
-    <main class="mt-10">
+       
+    <main class="mt-10" style="margin-top: 30px">
+      <h2 class="px-2 lg:px-0 uppercase font-bold text-red-500 text-4xl">
+              Trending
+            </h2><br>
+      <div class="block md:flex md:space-x-2 px-2 lg:p-0">
+        <a 
+          class="mb-4 md:mb-0 w-full md:w-1/4 relative rounded inline-block" 
+          style="height: 24em;"
+          href="view.html"
+        >
+          <div class="absolute left-0 bottom-0 w-full h-full z-10"
+            style="background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.7));"></div>
+          <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" class="absolute left-0 top-0 w-full h-full rounded z-0 object-cover" />
+          <div class="p-4 absolute bottom-0 left-0 z-20">
+            <span class="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">25 Minutes</span>
+            <h2 class="text-4xl font-semibold text-gray-100 leading-tight">
+              Pellentesque a consectetur velit.
+            </h2>
+            <div class="flex mt-3">
+              <img src="https://randomuser.me/api/portraits/men/97.jpg"
+                class="h-10 w-10 rounded-full mr-2 object-cover" />
+              <div>
+                <p class="font-semibold text-gray-200 text-sm"> Mike Sullivan </p>
+                <p class="font-semibold text-gray-400 text-xs"> 14 Aug </p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+          <a 
+          class="mb-4 md:mb-0 w-full md:w-1/4 relative rounded inline-block" 
+          style="height: 24em;"
+          href="view.html"
+        >
+          <div class="absolute left-0 bottom-0 w-full h-full z-10"
+            style="background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.7));"></div>
+          <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" class="absolute left-0 top-0 w-full h-full rounded z-0 object-cover" />
+          <div class="p-4 absolute bottom-0 left-0 z-20">
+            <span class="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">25 Minutes</span>
+            <h2 class="text-4xl font-semibold text-gray-100 leading-tight">
+              Pellentesque a consectetur velit.
+            </h2>
+            <div class="flex mt-3">
+              <img src="https://randomuser.me/api/portraits/men/97.jpg"
+                class="h-10 w-10 rounded-full mr-2 object-cover" />
+              <div>
+                <p class="font-semibold text-gray-200 text-sm"> Mike Sullivan </p>
+                <p class="font-semibold text-gray-400 text-xs"> 14 Aug </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a 
+          class="mb-4 md:mb-0 w-full md:w-1/4 relative rounded inline-block" 
+          style="height: 24em;"
+          href="view.html"
+        >
+          <div class="absolute left-0 bottom-0 w-full h-full z-10"
+            style="background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.7));"></div>
+          <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" class="absolute left-0 top-0 w-full h-full rounded z-0 object-cover" />
+          <div class="p-4 absolute bottom-0 left-0 z-20">
+            <span class="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">25 Minutes</span>
+            <h2 class="text-4xl font-semibold text-gray-100 leading-tight">
+              Pellentesque a consectetur velit.
+            </h2>
+            <div class="flex mt-3">
+              <img src="https://randomuser.me/api/portraits/men/97.jpg"
+                class="h-10 w-10 rounded-full mr-2 object-cover" />
+              <div>
+                <p class="font-semibold text-gray-200 text-sm"> Mike Sullivan </p>
+                <p class="font-semibold text-gray-400 text-xs"> 14 Aug </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a class="w-full md:w-1/4 relative rounded" 
+          style="height: 24em;"
+          href="view.html">
+          <div class="absolute left-0 top-0 w-full h-full z-10"
+            style="background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.7));"></div>
+          <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1301&q=80" class="absolute left-0 top-0 w-full h-full rounded z-0 object-cover" />
+          <div class="p-4 absolute bottom-0 left-0 z-20">
+            <span class="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">10 Minutes</span>
+            <h2 class="text-3xl font-semibold text-gray-100 leading-tight">Lorem ipsum dolor sit amet.</h2>
+            <div class="flex mt-3">
+              <img
+                src="https://images-na.ssl-images-amazon.com/images/M/MV5BODFjZTkwMjItYzRhMS00OWYxLWI3YTUtNWIzOWQ4Yjg4NGZiXkEyXkFqcGdeQXVyMTQ0ODAxNzE@._V1_UX172_CR0,0,172,256_AL_.jpg"
+                class="h-10 w-10 rounded-full mr-2 object-cover" />
+              <div>
+                <p class="font-semibold text-gray-200 text-sm"> Chrishell Staus </p>
+                <p class="font-semibold text-gray-400 text-xs"> 15 Aug </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+
       <div class="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10">
         <!-- post cards -->
         <div class="w-full lg:w-2/3">
@@ -119,7 +237,7 @@
                   <p class="font-semibold text-gray-700 text-sm capitalize"> eduard franz </p>
                   <p class="text-gray-600 text-xs"> 14 Aug </p>
                 </div>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;
                   <i class="fa fa-heart" style="font-size:20px;color:red"></i><p class="font-semibold text-gray-700 text-sm capitalize" style="margin-left: 10px"> 10 Likes </p>
                 &nbsp;&nbsp;&nbsp;
                   <p class="font-semibold text-gray-700 text-sm capitalize"> 10 comments </p>
@@ -127,7 +245,7 @@
             </div>
           </a>
 
-          <a class="block rounded w-full lg:flex mb-10"
+        <a class="block rounded w-full lg:flex mb-10"
             href="view.html"
           >
             <div 
@@ -153,15 +271,15 @@
                   <p class="font-semibold text-gray-700 text-sm capitalize"> eduard franz </p>
                   <p class="text-gray-600 text-xs"> 14 Aug </p>
                 </div>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;
                   <i class="fa fa-heart" style="font-size:20px;color:red"></i><p class="font-semibold text-gray-700 text-sm capitalize" style="margin-left: 10px"> 10 Likes </p>
                 &nbsp;&nbsp;&nbsp;
                   <p class="font-semibold text-gray-700 text-sm capitalize"> 10 comments </p>
               </div>
             </div>
           </a>
-
-          <a class="block rounded w-full lg:flex mb-10"
+            
+        <a class="block rounded w-full lg:flex mb-10"
             href="view.html"
           >
             <div 
@@ -187,14 +305,13 @@
                   <p class="font-semibold text-gray-700 text-sm capitalize"> eduard franz </p>
                   <p class="text-gray-600 text-xs"> 14 Aug </p>
                 </div>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;
                   <i class="fa fa-heart" style="font-size:20px;color:red"></i><p class="font-semibold text-gray-700 text-sm capitalize" style="margin-left: 10px"> 10 Likes </p>
                 &nbsp;&nbsp;&nbsp;
                   <p class="font-semibold text-gray-700 text-sm capitalize"> 10 comments </p>
               </div>
             </div>
           </a>
-
         </div>
 
         <!-- right sidebar -->
@@ -206,32 +323,32 @@
               <li class="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
                 <a href="#" class="flex items-center text-gray-600 cursor-pointer">
                   <span class="inline-block h-4 w-4 bg-red-600 mr-3"></span>
-                  Nutrition
-                  <span class="text-gray-500 ml-auto">23 posts</span>
+                  American
+                  <span class="text-gray-500 ml-auto"></span>
                   <i class='text-gray-500 bx bx-right-arrow-alt ml-1'></i>
                 </a>
               </li>
               <li class="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
                 <a href="#" class="flex items-center text-gray-600 cursor-pointer">
                   <span class="inline-block h-4 w-4 bg-red-500 mr-3"></span>
-                  Food & Diet
-                  <span class="text-gray-500 ml-auto">18 posts</span>
+                  Italian
+                  <span class="text-gray-500 ml-auto"></span>
                   <i class='text-gray-500 bx bx-right-arrow-alt ml-1'></i>
                 </a>
               </li>
               <li class="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
                 <a href="#" class="flex items-center text-gray-600 cursor-pointer">
                   <span class="inline-block h-4 w-4 bg-red-400 mr-3"></span>
-                  Workouts
-                  <span class="text-gray-500 ml-auto">34 posts</span>
+                  Asian
+                  <span class="text-gray-500 ml-auto"></span>
                   <i class='text-gray-500 bx bx-right-arrow-alt ml-1'></i>
                 </a>
               </li>
               <li class="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
                 <a href="#" class="flex items-center text-gray-600 cursor-pointer">
                   <span class="inline-block h-4 w-4 bg-red-300 mr-3"></span>
-                  Immunity
-                  <span class="text-gray-500 ml-auto">9 posts</span>
+                  Mexican
+                  <span class="text-gray-500 ml-auto"></span>
                   <i class='text-gray-500 bx bx-right-arrow-alt ml-1'></i>
                 </a>
               </li>
@@ -244,39 +361,37 @@
               <li class="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
                 <a href="#" class="flex items-center text-gray-600 cursor-pointer">
                   <span class="inline-block h-4 w-4 bg-red-600 mr-3"></span>
-                  Nutrition
-                  <span class="text-gray-500 ml-auto">23 posts</span>
+                  Eggs
+                  <span class="text-gray-500 ml-auto"></span>
                   <i class='text-gray-500 bx bx-right-arrow-alt ml-1'></i>
                 </a>
               </li>
               <li class="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
                 <a href="#" class="flex items-center text-gray-600 cursor-pointer">
                   <span class="inline-block h-4 w-4 bg-red-500 mr-3"></span>
-                  Food & Diet
-                  <span class="text-gray-500 ml-auto">18 posts</span>
+                  Fish
+                  <span class="text-gray-500 ml-auto"></span>
                   <i class='text-gray-500 bx bx-right-arrow-alt ml-1'></i>
                 </a>
               </li>
               <li class="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
                 <a href="#" class="flex items-center text-gray-600 cursor-pointer">
                   <span class="inline-block h-4 w-4 bg-red-400 mr-3"></span>
-                  Workouts
-                  <span class="text-gray-500 ml-auto">34 posts</span>
+                  Milk
+                  <span class="text-gray-500 ml-auto"></span>
                   <i class='text-gray-500 bx bx-right-arrow-alt ml-1'></i>
                 </a>
               </li>
               <li class="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
                 <a href="#" class="flex items-center text-gray-600 cursor-pointer">
                   <span class="inline-block h-4 w-4 bg-red-300 mr-3"></span>
-                  Immunity
-                  <span class="text-gray-500 ml-auto">9 posts</span>
+                  Peanuts
+                  <span class="text-gray-500 ml-auto"></span>
                   <i class='text-gray-500 bx bx-right-arrow-alt ml-1'></i>
                 </a>
               </li>
             </ul>
           </div>
-            
-            
           <!-- divider -->
           <div class="border border-dotted"></div>
 
@@ -310,7 +425,7 @@
           <h6 class="font-semibold text-gray-700 mb-4">Company</h6>
           <ul>
             <li> <a href="" class="block text-gray-600 py-2">Team</a> </li>
-            <li> <a href="about.html" class="block text-gray-600 py-2">About Us</a> </li>
+            <li> <a href="" class="block text-gray-600 py-2">About Us</a> </li>
           </ul>
         </div>
 
