@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FoodStrap</title>
-	<meta name="FoodStrap Team" content="">
+    <link href="imgs/logo.png" rel="icon" type="image/x-icon" />
+	  <meta name="FoodStrap Team" content="">
 
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="dd.css" rel="stylesheet">
-  <link href="post_recipe.css" rel="stylesheet">
-  <style>
+	  <link href="dd.css" rel="stylesheet">
+    <link href="post_recipe.css" rel="stylesheet">
+    <style>
     .required:after {
       content:" *";
       color: red;
-    }
-  </style>
+      }
+    </style>
 	
    <!-- <style>
         .body-bg {
@@ -29,26 +30,42 @@
     </style> -->
 </head>
 
-   <div class="max-w-screen-xl mx-auto">
+  <div class="max-w-screen-xl mx-auto">
     <!-- header -->
-    <header class="flex items-center justify-between py-2 border-b " >
-        <a href ="index.html"><img class="logo" src="imgs/logo.png" alt="logo" style="height:80px; margin-top: 5px; margin-bottom: 5px; margin-right: 30px; margin-left: 5px"/></a>
-	<!--search box-->
-       <form class="example centered1" action="/action_page.php">
-		<input type="text" placeholder="Search recipe.." name="search">
+    <header class="flex items-center justify-between py-2 border-b">
+      <a href ="account.html"><img class="logo" src="imgs/logo.png" alt="logo" style="height:80px; margin-top: 5px; margin-bottom: 5px; margin-right: 30px; margin-left: 5px"/></a>
+    <!--search box-->
+        <form class="example centered1" action="/action_page.php" style="margin-left: 20px">
+		<input type="text" placeholder="Search Recipe.." name="search">
 		<button type="submit"><i class="fa fa-search"></i></button>
 	   </form>
     <!--nav-->
       <ul class="inline-flex items-center">
-        <li class="px-2 md:px-4">
-          <a href="login.html" class="text-gray-500 font-semibold hover:text-red-500"> Log In </a>
+        <li class="px-2 md:px-4 hidden md:block">
+          <a href="account.html" class="text-gray-500 font-semibold hover:text-red-500"> Home </a>
         </li>
-        <li class="px-2 md:px-4">
-          <a href="signup.html" class="text-gray-500 font-semibold hover:text-red-500"> Sign Up </a>
+        <li class="px-2 md:px-4" style="margin-right:10px">
+          <a href="signup.html" class="text-gray-500 font-semibold hover:text-red-500"> Post Recipe </a>
         </li>
-        <!--<li class="px-2 md:px-4">
-          <a href="post_recipe.html" class="btn btn-primary" role="button" data-bs-toggle="button">Post Recipe</a>
-        </li>-->
+        <div class="relative hover-trigger" style="margin-right: 5px">
+        <button class="block h-12 w-12 rounded-full overflow-hidden focus:outline-none">
+      <img class="h-full w-full object-cover" src="https://eu.ui-avatars.com/api/?name=John&size=1000" alt="avatar">
+    </button>
+      <div class="absolute px-6 py-2 hover-target">
+       <div class="absolute right-0 w-40 mt-2 py-1 bg-white border rounded shadow-xl">   
+      <a href="index.html" class="transition-colors duration-200 block px-4 py-2 text-normal text-gray-900 rounded hover:bg-red-500 hover:text-white">Logout</a>
+  </div>
+      </div>
+        </div>
+        <style>
+        .hover-trigger .hover-target {
+            display: none;
+        }
+
+        .hover-trigger:hover .hover-target {
+            display: block;
+        }
+        </style>
       </ul>
     </header>
     <!-- header ends here -->
@@ -85,11 +102,12 @@
                   <option selected>Choose possible allergens</option>
                   <option value="egg">Egg</option>
                   <option value="fish">Fish</option>
-                  <option value="milk">Milk</option>  
+                  <option value="dairy">Dairy</option>  
                   <option value="peanuts">Peanuts</option>
                   <option value="shellfish">Shellfish</option>
                   <option value="soy">Soy</option>
                   <option value="tree_nuts">Tree Nuts</option>
+                  <option value="none">None</option>
                 </select> <br>
                 <label ></label>
               </div> 
@@ -104,20 +122,20 @@
                 <input type="text" class="form-control" id="cuisine" name="cuisine" placeholder="Enter cuisine type"  ><br>
               </div>
 
-                <div class="col-3" class="form-row">
-                  <label>Cook Time:</label>
+                <div class="col-3 form-row ">
+                  <label class="p-2">Cook Time:</label>
                 </div>
-                <div class="col-2" class="form-row">
+                <div class="col-2 form-row" >
                   <input type="text" class="form-control" id="hours" pattern="[0-9]+" placeholder="hours">
                   </div>
-                  <div class="col-2" class="form-row">
-                    <p>hr</p>
+                  <div class="col-2 form-row">
+                    <p class="p-1.5">hr</p>
                   </div>
-                  <div class="col-2" class="form-row">
+                  <div class="col-2 form-row" >
                   <input type="text" class="form-control" id="minutes" pattern="[0-9]+" placeholder="minutes">   
                   </div>
-                  <div class="col-2" class="form-row">
-                    <p>min</p>
+                  <div class="col-2 form-row " >
+                    <p class="p-1.5">min</p>
                   </div>
                 
 
