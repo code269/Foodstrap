@@ -4,6 +4,9 @@ const path = require('path');
 const mongoose = require('mongoose');
 const Recipe = require('./models/recipe');
 const methodOverride = require('method-override');
+// const morgan = require('morgan');
+
+// app.use(morgan('tiny'));
 
 mongoose.connect('mongodb://localhost:27017/foodstrap', {
   useNewUrlParser: true,
@@ -29,6 +32,14 @@ app.get('/', async (req, res) => {
   const recipes = await Recipe.find({});
   res.render('home', { recipes });
 });
+
+//?Search request
+app.get('/search/?:query', async (req, res) => {
+  const recipes = await Recipe.find({ title: 'Kani' });
+});
+
+//?Filter request
+app.get('/filter', async (req, res) => {});
 
 app.get('/recipes/:id', async (req, res) => {
   const recipe = await Recipe.findById(req.params.id);
@@ -62,6 +73,11 @@ app.delete('/recipes/:id', async (req, res) => {
   const { id } = req.params;
   await Recipe.findByIdAndDelete(id);
   res.redirect('/');
+});
+
+//404 Route
+app.use((req, res) => {
+  res.status(404).send('404 Not Found!');
 });
 
 app.listen(3000, () => {
