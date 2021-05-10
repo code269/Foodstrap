@@ -14,6 +14,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="dd.css" rel="stylesheet">
   <link href="post_recipe.css" rel="stylesheet">
+  <style>
+    .required:after {
+      content:" *";
+      color: red;
+    }
+  </style>
 	
    <!-- <style>
         .body-bg {
@@ -60,8 +66,8 @@
             <form style="width: auto;" id="post_recipe" action="" method="post" >
               <div class="form-row">
                 <div class="col-12">
-                  <label for = "recipe_title " > Title: </label>
-                  <input type="text" class="form-control text-gray-600" id="recipe_title" name="recipe_title" placeholder="Enter the title of your recipe"  pattern="[a-zA-Z]+" required><br>
+                  <label for = "recipe_title" class="required"> Title: </label>
+                  <input type="text" class="form-control text-gray-600" id="recipe_title" name="recipe_title" placeholder="Enter the title of your recipe"  required><br>
                </div>
 
                <div class="col-12">
@@ -70,12 +76,12 @@
               </div>
                     
                 <div class="col-12">
-                <label for = "ingredients">Ingredients:</label>
-                <textarea type="text"  class="form-control"id="ingredients" name="ingredients" placeholder="Add ingredients"> </textarea><br>
+                <label for = "ingredients" class=" required">Ingredients:</label>
+                <textarea type="text"  class="form-control"id="ingredients" name="ingredients" placeholder="Add ingredients" required> </textarea><br>
               </div>
               <div class="col-12">
-                <label for = "allergens">Allergens:</label>
-                <select class="custom-select" id="allergens">
+                <label for = "allergens" class="required">Allergens:</label>
+                <select class="custom-select"  id="allergens" required>
                   <option selected>Choose possible allergens</option>
                   <option value="egg">Egg</option>
                   <option value="fish">Fish</option>
@@ -87,44 +93,43 @@
                 </select> <br>
                 <label ></label>
               </div> 
+      
               <div class="col-12">
-                <label for = "meal_Type">Meal Type:</label>
-                <select class="custom-select" id="allergens">
-                  <option selected>Choose a type of your meal</option>
-                  <option value="appetizers">Appetizers</option>
-                  <option value="breakfast">Breakfast</option>
-                  <option value="dessert">Dessert</option>
-                  <option value="dinner">Dinner</option>
-                  <option value="lunch">Lunch</option>
-                  <option value="side_dishes">Side Dishes</option>
-                  <option value="snacks">Snacks</option>  
-                </select> <br>
-                <label ></label>
-              </div> 
-              <div class="col-12">
-                <label for = "steps">Steps:</label>  
-                <input type="text" class="form-control" id="steps" name="steps" placeholder="Enter cooking steps" value="" pattern="[a-zA-Z]+" required><br>
+                <label for = "steps" class="required">Steps:</label>  
+                <textarea type="text" class="form-control" id="steps" name="steps" placeholder="Enter cooking steps" value=""  required></textarea><br>
               </div>
               
               <div class="col-12"> 
                 <label for = "cuisine">Cuisine:</label>
-                <input type="text" class="form-control" id="cuisine" name="cuisine" placeholder="Enter cuisine type" pattern="[a-zA-Z]+" ><br>
+                <input type="text" class="form-control" id="cuisine" name="cuisine" placeholder="Enter cuisine type"  ><br>
               </div>
-                <div class="col-4" class="form-row">
+
+                <div class="col-3" class="form-row">
                   <label>Cook Time:</label>
-                  <input type="text" class="form-control" id="hours" placeholder="Hours">
-                  <input type="text" class="form-control" id="minutes" placeholder="Minutes"> <br>
                 </div>
+                <div class="col-2" class="form-row">
+                  <input type="text" class="form-control" id="hours" pattern="[0-9]+" placeholder="hours">
+                  </div>
+                  <div class="col-2" class="form-row">
+                    <p>hr</p>
+                  </div>
+                  <div class="col-2" class="form-row">
+                  <input type="text" class="form-control" id="minutes" pattern="[0-9]+" placeholder="minutes">   
+                  </div>
+                  <div class="col-2" class="form-row">
+                    <p>min</p>
+                  </div>
                 
 
                 <div class="col-12 mb-3">
-                  <label for="formFileMultiple" class="form-label">Attach a picture</label>
+                  <label for="formFileMultiple" class="form-label">Attach picture</label>
                   <input class="form-control" type="file" id="formFileMultiple" multiple>
                 </div>
+                
               </div>
-
+              <div class="col-12">
                 <button type="submit"  class="btn font-bold bg-red-500 w-full text-gray-200" value="Post recipe">Post recipe</button>
-
+              </div>
             </form>
         </div>
           
