@@ -1,0 +1,98 @@
+/* Style the search field */
+	/* Style the search field */
+	form.example input[type=text] {
+	  padding: 10px;
+	  font-size: 17px;
+	  border: 1px solid grey;
+	  float: left;
+	  width: 90%;
+	  background: white;
+	  
+	}
+	
+
+	/* Style the submit button */
+	form.example button {
+	  float: left;
+	  width: 10%;
+	  padding: 10px;
+	  background: grey;
+	  color: white;
+	  font-size: 17px;
+	  border: 1px solid grey;
+	  border-left: none; /* Prevent double borders */
+	  cursor: pointer;
+	}
+	
+
+	form.example button:hover {
+	  background: rgb(255,99,71);
+	}
+	
+
+	/* Clear floats */
+	form.example::after {
+	  content: "";
+	  clear: both;
+	  display: table;
+	}
+	
+
+	.centered1 {
+	  position: absolute;
+	  top: 5%;
+	  left: 20%;
+	  width: 50%;
+	  ;
+	}
+
+
+@media only screen and (min-width : 150px) and (max-width : 780px)
+{
+	{}
+	.centered2
+	{
+		width: 45%;
+		margin: 0 auto;
+	
+	}
+	
+	* {
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: grey;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: rgb(255,99,71);
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+}
