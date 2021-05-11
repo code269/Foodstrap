@@ -166,6 +166,7 @@
                   id="hours"
                   pattern="[0-9]+"
                   placeholder="hours"
+                  value="<%= !recipe.prepHrs ? '' : recipe.prepHrs %> "
                 />
               </div>
               <div class="col-2 form-row">
@@ -178,6 +179,7 @@
                   id="minutes"
                   pattern="[0-9]+"
                   placeholder="minutes"
+                  value="<%= !recipe.prepMins ? '' : recipe.prepMins %> "
                 />
               </div>
               <div class="col-2 form-row">
