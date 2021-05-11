@@ -35,7 +35,7 @@ app.use(methodOverride('_method'));
 app.get('/', async (req, res) => {
   const recipes = await Recipe.find({});
   // res.render('home', { recipes });
-  res.render('home2', { recipes });
+  res.render('home', { recipes });
 });
 
 //?Search request
@@ -58,6 +58,14 @@ app.get('/recipes/:id/edit', async (req, res) => {
 
 app.get('/new', (req, res) => {
   res.render('posts/newRecipe');
+});
+
+app.get('/login', (req, res) => {
+  res.render('login');
+});
+
+app.get('/signup', (req, res) => {
+  res.render('signup');
 });
 
 app.post('/newRecipe', async (req, res) => {

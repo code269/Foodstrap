@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>FoodStrap</title>
+    <link href="imgs/logo.png" rel="icon" type="image/x-icon" />
+    <meta name="FoodStrap Team" content="" />
+
+    <link
+      href="https://unpkg.com/tailwindcss/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="dd.css" rel="stylesheet" />
+    <link href="post_recipe.css" rel="stylesheet" />
+    <style>
+      .required:after {
+        content: ' *';
+        color: red;
+      }
+    </style>
+
+    <!-- <style>
+        .body-bg {
+            background-color: rgb(255,99,71);
+            background-image: linear-gradient(315deg, #FF6347 0%, #5f72be 74%);
+        }
+    </style> -->
+  </head>
+
+  <div class="max-w-screen-xl mx-auto">
+    <!-- header -->
+    <header class="flex items-center justify-between py-2 border-b">
+      <a href="account.html"
+        ><img
+          class="logo"
+          src="imgs/logo.png"
+          alt="logo"
+          style="
+            height: 80px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-right: 30px;
+            margin-left: 5px;
+          "
+      /></a>
+      <!--search box-->
+      <form
+        class="example centered1"
+        action="/action_page.php"
+        style="margin-left: 20px"
+      >
+        <input type="text" placeholder="Search Recipe.." name="search" />
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+      <!--nav-->
+      <ul class="inline-flex items-center">
+        <li class="px-2 md:px-4 hidden md:block">
+          <a
+            href="account.html"
+            class="text-gray-500 font-semibold hover:text-red-500"
+          >
+            Home
+          </a>
+        </li>
+        <li class="px-2 md:px-4" style="margin-right: 10px">
+          <a
+            href="signup.html"
+            class="text-gray-500 font-semibold hover:text-red-500"
+          >
+            Post Recipe
+          </a>
+        </li>
+        <div class="relative hover-trigger" style="margin-right: 5px">
+          <button
+            class="
+              block
+              h-12
+              w-12
+              rounded-full
+              overflow-hidden
+              focus:outline-none
+            "
+          >
+            <img
+              class="h-full w-full object-cover"
+              src="https://eu.ui-avatars.com/api/?name=John&size=1000"
+              alt="avatar"
+            />
+          </button>
+          <div class="absolute px-6 py-2 hover-target">
+            <div
+              class="
+                absolute
+                right-0
+                w-40
+                mt-2
+                py-1
+                bg-white
+                border
+                rounded
+                shadow-xl
+              "
+            >
+              <a
+                href="index.html"
+                class="
+                  transition-colors
+                  duration-200
+                  block
+                  px-4
+                  py-2
+                  text-normal text-gray-900
+                  rounded
+                  hover:bg-red-500
+                  hover:text-white
+                "
+                >Logout</a
+              >
+            </div>
+          </div>
+        </div>
+        <style>
+          .hover-trigger .hover-target {
+            display: none;
+          }
+
+          .hover-trigger:hover .hover-target {
+            display: block;
+          }
+        </style>
+      </ul>
+    </header>
+    <!-- header ends here -->
+
+    <main class="mt-10" style="margin-top: 30px">
+      <h2 class="px-2 lg:px-0 uppercase font-bold text-red-500 text-4xl">
+        Post Recipe
+      </h2>
+      <br />
+      <!-- top part starts here-->
+      <div class="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10">
+        <!-- form starts here -->
+
+        <div class="col-8 text-gray-600 font-bold">
+          <form style="width: auto" id="post_recipe" action="" method="post">
+            <div class="form-row">
+              <div class="col-12">
+                <label for="recipe_title" class="required"> Title: </label>
+                <input
+                  type="text"
+                  class="form-control text-gray-600"
+                  id="recipe_title"
+                  name="recipe_title"
+                  placeholder="Enter the title of your recipe"
+                  required
+                /><br />
+              </div>
+
+              <div class="col-12">
+                <label for="description">Description:</label>
+                <textarea
+                  type="text"
+                  class="form-control"
+                  id="description"
+                  name="description"
+                  placeholder="Add description for your recipe"
+                >
+                </textarea
+                ><br />
+              </div>
+
+              <div class="col-12">
+                <label for="ingredients" class="required">Ingredients:</label>
+                <textarea
+                  type="text"
+                  class="form-control"
+                  id="ingredients"
+                  name="ingredients"
+                  placeholder="Add ingredients"
+                  required
+                >
+                </textarea
+                ><br />
+              </div>
+              <div class="col-12">
+                <label for="allergens" class="required">Allergens:</label>
+                <select class="custom-select" id="allergens" required>
+                  <option selected>Choose possible allergens</option>
+                  <option value="egg">Egg</option>
+                  <option value="fish">Fish</option>
+                  <option value="dairy">Dairy</option>
+                  <option value="peanuts">Peanuts</option>
+                  <option value="shellfish">Shellfish</option>
+                  <option value="soy">Soy</option>
+                  <option value="tree_nuts">Tree Nuts</option>
+                  <option value="none">None</option>
+                </select>
+                <br />
+                <label></label>
+              </div>
+
+              <div class="col-12">
+                <label for="steps" class="required">Steps:</label>
+                <textarea
+                  type="text"
+                  class="form-control"
+                  id="steps"
+                  name="steps"
+                  placeholder="Enter cooking steps"
+                  value=""
+                  required
+                ></textarea
+                ><br />
+              </div>
+
+              <div class="col-12">
+                <label for="cuisine">Cuisine:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cuisine"
+                  name="cuisine"
+                  placeholder="Enter cuisine type"
+                /><br />
+              </div>
+
+              <div class="col-3 form-row">
+                <label class="p-2">Cook Time:</label>
+              </div>
+              <div class="col-2 form-row">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="hours"
+                  pattern="[0-9]+"
+                  placeholder="hours"
+                />
+              </div>
+              <div class="col-2 form-row">
+                <p class="p-1.5">hr</p>
+              </div>
+              <div class="col-2 form-row">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="minutes"
+                  pattern="[0-9]+"
+                  placeholder="minutes"
+                />
+              </div>
+              <div class="col-2 form-row">
+                <p class="p-1.5">min</p>
+              </div>
+
+              <div class="col-12 mb-3">
+                <label for="formFileMultiple" class="form-label"
+                  >Attach picture</label
+                >
+                <input
+                  class="form-control"
+                  type="file"
+                  id="formFileMultiple"
+                  multiple
+                />
+              </div>
+            </div>
+            <div class="col-12">
+              <button
+                type="submit"
+                class="btn font-bold bg-red-500 w-full text-gray-200"
+                value="Post recipe"
+              >
+                Post recipe
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- form ends here -->
+        <!-- right sidebar -->
+        <div class="w-full lg:w-1/3 px-3">
+          <div class="mb-4 py-4">
+            <img
+              class="post_recipe_blank_sheet"
+              src="imgs/post_recipe_blank_sheet.jpg"
+              alt="post_recipe_blank_sheet"
+            />
+          </div>
+
+          <!-- divider -->
+          <div class="border border-dotted"></div>
+
+          <!--subscribe -->
+          <div class="p-1 mt-4 mb-4">
+            <h5 class="font-bold text-lg uppercase text-gray-700 mb-2">
+              Join Our Email List
+            </h5>
+            <p class="text-gray-600">
+              Subscribe to our newsletter. We deliver the best health related
+              articles to your inbox
+            </p>
+            <input
+              placeholder="Enter you email address"
+              class="
+                text-gray-700
+                bg-gray-100
+                rounded-t
+                hover:outline-none
+                p-2
+                w-full
+                mt-4
+                border
+              "
+            />
+            <button
+              class="
+                px-4
+                py-2
+                bg-red-500
+                text-gray-200
+                rounded-b
+                w-full
+                capitalize
+                tracking-wide
+              "
+            >
+              Subscribe
+            </button>
+          </div>
+
+          <!-- divider -->
+          <div class="border border-dotted"></div>
+        </div>
+      </div>
+    </main>
+    <!-- main ends here -->
+
+    <!-- footer -->
+    <footer
+      class="border-t mt-32 pt-12 pb-32 px-4 lg:px-0"
+      style="margin-top: 60px"
+    >
+      <div class="flex">
+        <div class="w-full md:w-1/3 lg:w-1/4">
+          <h6 class="font-semibold text-gray-700 mb-4">Company</h6>
+          <ul>
+            <li><a href="" class="block text-gray-600 py-2">Team</a></li>
+            <li><a href="" class="block text-gray-600 py-2">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="w-full md:w-1/3 lg:w-1/4">
+          <h6 class="font-semibold text-gray-700 mb-4">Content</h6>
+          <ul>
+            <li>
+              <a href="" class="block text-gray-600 py-2">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="" class="block text-gray-600 py-2">Terms & Conditions</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+</html>
