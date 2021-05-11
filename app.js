@@ -29,9 +29,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
 app.get('/', async (req, res) => {
-  // const recipes = await Recipe.find({});
+  const recipes = await Recipe.find({});
   // res.render('home', { recipes });
-  res.render('home2');
+  res.render('home2', { recipes });
 });
 
 //?Search request
