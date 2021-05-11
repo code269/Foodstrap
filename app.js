@@ -1,14 +1,21 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 const express = require('express');
 const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const Recipe = require('./models/recipe');
 const methodOverride = require('method-override');
+const dbURL = process.env.DB_URL || 'mongodb://localhost:27017/foodstrap';
 // const morgan = require('morgan');
 
 // app.use(morgan('tiny'));
 
-mongoose.connect('mongodb://localhost:27017/foodstrap', {
+//'mongodb://localhost:27017/foodstrap'
+
+mongoose.connect(dbURL, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
@@ -34,17 +41,15 @@ app.use(methodOverride('_method'));
 
 app.get('/', async (req, res) => {
   const recipes = await Recipe.find({});
-  // res.render('home', { recipes });
   res.render('home', { recipes });
 });
 
 //?Search request
-app.get('/search/?:query', async (req, res) => {
-  const recipes = await Recipe.find({ title: 'Kani' });
-});
-
-app.get('/search', (req, res) => {
-  res.render('search');
+app.get('/search/', async (req, res) => {
+  const recipes = await Recipe.find({});
+  console.log(recipes);
+  console.log(req.params.q);
+  res.render('search', { recipes });
 });
 
 //?Filter request
@@ -85,6 +90,10 @@ app.get('/new', (req, res) => {
   res.render('newPost');
 });
 
+app.get('/about', (req, res) => {
+  res.render('about');
+});
+
 app.post('/newRecipe', async (req, res) => {
   const recipe = new Recipe(req.body.newRecipe);
   await recipe.save();
@@ -105,10 +114,10 @@ app.delete('/recipes/:id', async (req, res) => {
   res.redirect('/');
 });
 
-// //404 Route
-// app.use((req, res) => {
-//   res.status(404).send('404 Not Found!');
-// });
+//404 Route
+app.use((req, res) => {
+  res.status(404).render('404');
+});
 
 app.listen(3000, () => {
   console.log('Listening on port 3000...');
