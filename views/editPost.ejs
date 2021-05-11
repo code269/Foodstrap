@@ -87,8 +87,8 @@
                   id="description"
                   name="newRecipe[description]"
                   placeholder="Add description for your recipe"
-                  value="<%= recipe.description %>"
                 >
+<%= recipe.description %>
                 </textarea>
                 <br />
               </div>
@@ -103,8 +103,8 @@
                   name="newRecipe[ingredients]"
                   placeholder="Add ingredients"
                   required
-                  value="<%= recipe.ingredients %>"
                 >
+<%= recipe.ingredients %>
                 </textarea>
                 <br />
               </div>
@@ -130,7 +130,6 @@
               <div class="col-12">
                 <label for="steps" class="required">Directions:</label>
                 <textarea
-                  value="<%= recipe.directions %>"
                   type="text"
                   class="form-control"
                   id="steps"
@@ -138,6 +137,7 @@
                   placeholder="Enter cooking directions"
                   required
                 >
+ <%= recipe.directions %>
                 </textarea>
                 <br />
               </div>
