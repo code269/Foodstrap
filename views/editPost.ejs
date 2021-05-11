@@ -55,12 +55,11 @@
       <!-- top part starts here-->
       <div class="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10">
         <!-- form starts here -->
-
         <div class="col-8 text-gray-600 font-bold">
           <form
             style="width: auto"
             id="post_recipe"
-            action="/newRecipe"
+            action="/recipes/<%= recipe._id %>/?_method=PUT"
             method="POST"
           >
             <!-- Title -->
@@ -73,6 +72,7 @@
                   id="recipe_title"
                   name="newRecipe[title]"
                   placeholder="Enter the title of your recipe"
+                  value="<%= recipe.title %>"
                   required
                 />
                 <br />
@@ -87,6 +87,7 @@
                   id="description"
                   name="newRecipe[description]"
                   placeholder="Add description for your recipe"
+                  value="<%= recipe.description %>"
                 >
                 </textarea>
                 <br />
@@ -102,6 +103,7 @@
                   name="newRecipe[ingredients]"
                   placeholder="Add ingredients"
                   required
+                  value="<%= recipe.ingredients %>"
                 >
                 </textarea>
                 <br />
@@ -128,6 +130,7 @@
               <div class="col-12">
                 <label for="steps" class="required">Directions:</label>
                 <textarea
+                  value="<%= recipe.directions %>"
                   type="text"
                   class="form-control"
                   id="steps"
@@ -148,6 +151,7 @@
                   id="cuisine"
                   name="newRecipe[cuisine]"
                   placeholder="Enter cuisine type"
+                  value="<%= recipe.cuisine %>"
                 /><br />
               </div>
 
@@ -192,7 +196,7 @@
                 />
               </div>
             </div>
-            <div class="col-12">
+            <div class="col-6">
               <button
                 type="submit"
                 class="btn font-bold bg-red-500 w-full text-gray-200"

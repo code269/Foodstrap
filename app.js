@@ -58,11 +58,7 @@ app.get('/recipes/:id', async (req, res) => {
 
 app.get('/recipes/:id/edit', async (req, res) => {
   const recipe = await Recipe.findById(req.params.id);
-  res.render('posts/edit', { recipe });
-});
-
-app.get('/new', (req, res) => {
-  res.render('posts/newPost');
+  res.render('editPost', { recipe });
 });
 
 app.get('/login', (req, res) => {
@@ -73,7 +69,7 @@ app.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-app.get('/newPost', (req, res) => {
+app.get('/new', (req, res) => {
   res.render('newPost');
 });
 
