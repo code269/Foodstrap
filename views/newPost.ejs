@@ -110,15 +110,20 @@
               <!-- Allergies -->
               <div class="col-12">
                 <label for="allergens" class="required">Allergies:</label>
-                <select class="custom-select" id="allergens" required>
-                  <option value="none" selected>None</option>
-                  <option value="egg">Egg</option>
-                  <option value="fish">Fish</option>
-                  <option value="dairy">Dairy</option>
-                  <option value="peanuts">Peanuts</option>
-                  <option value="shellfish">Shellfish</option>
-                  <option value="soy">Soy</option>
-                  <option value="tree_nuts">Tree Nuts</option>
+                <select
+                  name="newRecipe[allergies]"
+                  class="custom-select"
+                  id="allergens"
+                  required
+                >
+                  <option value="None" selected>None</option>
+                  <option value="Egg">Egg</option>
+                  <option value="Fish">Fish</option>
+                  <option value="Dairy">Dairy</option>
+                  <option value="Peanuts">Peanuts</option>
+                  <option value="Shellfish">Shellfish</option>
+                  <option value="Soy">Soy</option>
+                  <option value="Tree Nuts">Tree Nuts</option>
                 </select>
                 <br />
                 <br />
@@ -157,6 +162,7 @@
               </div>
               <div class="col-2 form-row">
                 <input
+                  name="newRecipe[prepHrs]"
                   type="text"
                   class="form-control"
                   id="hours"
@@ -169,6 +175,7 @@
               </div>
               <div class="col-2 form-row">
                 <input
+                  name="newRecipe[prepMins]"
                   type="text"
                   class="form-control"
                   id="minutes"
