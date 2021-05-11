@@ -69,12 +69,21 @@ app.get('/', async (req, res) => {
   res.render('home', { recipes });
 });
 
-//Testing user
-app.get('/fakeUser', async (req, res) => {
-  const user = new User({ email: 'testing@gmail.com', username: 'Foodstrap' });
-  const newUser = await User.register(user, 'cookiemonster102');
-  res.send(newUser);
+//Auth start
+app.get('/login', (req, res) => {
+  res.render('login');
 });
+
+app.get('/signup', (req, res) => {
+  res.render('signup');
+});
+
+app.post('/signup', async (req, res) => {
+  const { email, password } = req.body;
+  const user = new User({ email });
+  const registeredUser = await User.register(user, password);
+});
+//Auth end
 
 //?Search request
 app.get('/search/', async (req, res) => {
@@ -108,14 +117,6 @@ app.get('/recipes/:id', async (req, res) => {
 app.get('/recipes/:id/edit', async (req, res) => {
   const recipe = await Recipe.findById(req.params.id);
   res.render('editPost', { recipe });
-});
-
-app.get('/login', (req, res) => {
-  res.render('login');
-});
-
-app.get('/signup', (req, res) => {
-  res.render('signup');
 });
 
 app.get('/new', (req, res) => {
