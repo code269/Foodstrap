@@ -57,50 +57,61 @@
         <!-- form starts here -->
 
         <div class="col-8 text-gray-600 font-bold">
-          <form style="width: auto" id="post_recipe" action="" method="post">
+          <form
+            style="width: auto"
+            id="post_recipe"
+            action="/newRecipe"
+            method="POST"
+          >
+            <!-- Title -->
             <div class="form-row">
               <div class="col-12">
-                <label for="recipe_title" class="required"> Title: </label>
+                <label for="title" class="required"> Title: </label>
                 <input
                   type="text"
                   class="form-control text-gray-600"
                   id="recipe_title"
-                  name="recipe_title"
+                  name="newRecipe[title]"
                   placeholder="Enter the title of your recipe"
                   required
-                /><br />
+                />
+                <br />
               </div>
 
+              <!-- Description -->
               <div class="col-12">
                 <label for="description">Description:</label>
                 <textarea
                   type="text"
                   class="form-control"
                   id="description"
-                  name="description"
+                  name="newRecipe[description]"
                   placeholder="Add description for your recipe"
                 >
                 </textarea
                 ><br />
               </div>
 
+              <!-- Ingredients -->
               <div class="col-12">
                 <label for="ingredients" class="required">Ingredients:</label>
                 <textarea
                   type="text"
                   class="form-control"
                   id="ingredients"
-                  name="ingredients"
+                  name="newRecipe[ingredients]"
                   placeholder="Add ingredients"
                   required
                 >
-                </textarea
-                ><br />
+                </textarea>
+                <br />
               </div>
+
+              <!-- Allergies -->
               <div class="col-12">
-                <label for="allergens" class="required">Allergens:</label>
+                <label for="allergens" class="required">Allergies:</label>
                 <select class="custom-select" id="allergens" required>
-                  <option selected>Choose possible allergens</option>
+                  <option value="none" selected>None</option>
                   <option value="egg">Egg</option>
                   <option value="fish">Fish</option>
                   <option value="dairy">Dairy</option>
@@ -108,37 +119,39 @@
                   <option value="shellfish">Shellfish</option>
                   <option value="soy">Soy</option>
                   <option value="tree_nuts">Tree Nuts</option>
-                  <option value="none">None</option>
                 </select>
                 <br />
-                <label></label>
+                <br />
               </div>
 
+              <!-- Directions -->
               <div class="col-12">
-                <label for="steps" class="required">Steps:</label>
+                <label for="steps" class="required">Directions:</label>
                 <textarea
                   type="text"
                   class="form-control"
                   id="steps"
-                  name="steps"
-                  placeholder="Enter cooking steps"
-                  value=""
+                  name="newRecipe[directions]"
+                  placeholder="Enter cooking directions"
                   required
-                ></textarea
-                ><br />
+                >
+                </textarea>
+                <br />
               </div>
 
+              <!-- Cuisine -->
               <div class="col-12">
                 <label for="cuisine">Cuisine:</label>
                 <input
                   type="text"
                   class="form-control"
                   id="cuisine"
-                  name="cuisine"
+                  name="newRecipe[cuisine]"
                   placeholder="Enter cuisine type"
                 /><br />
               </div>
 
+              <!-- Cook Time -->
               <div class="col-3 form-row">
                 <label class="p-2">Cook Time:</label>
               </div>
@@ -185,7 +198,7 @@
                 class="btn font-bold bg-red-500 w-full text-gray-200"
                 value="Post recipe"
               >
-                Post recipe
+                Post
               </button>
             </div>
           </form>
