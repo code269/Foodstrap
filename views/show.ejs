@@ -1,59 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>FoodStrap</title>
-    <link href="imgs/logo.png" rel="icon" type="image/x-icon"/>
-	<meta name="author" content="">
-    <meta name="description" content="">
-    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="dd.css" rel="stylesheet">
-</head>
+<%- include('./partials/head') %> 
 
    <div class="max-w-screen-xl mx-auto">
-    <!-- header -->
-    <header class="flex items-center justify-between py-2 border-b">
-      <a href ="account.html"><img class="logo" src="imgs/logo.png" alt="logo" style="height:80px; margin-top: 5px; margin-bottom: 5px; margin-right: 30px; margin-left: 5px"/></a>
-    <!--search box-->
-        <form class="example centered1" action="/action_page.php" style="margin-left: 20px">
-		<input type="text" placeholder="Search Recipe.." name="search">
-		<button type="submit"><i class="fa fa-search"></i></button>
-	   </form>
-    <!--nav-->
-      <ul class="inline-flex items-center">
-        <li class="px-2 md:px-4 hidden md:block">
-          <a href="account.html" class="text-gray-500 font-semibold hover:text-red-500"> Home </a>
-        </li>
-        <li class="px-2 md:px-4" style="margin-right:10px">
-          <a href="signup.html" class="text-gray-500 font-semibold hover:text-red-500"> Post Recipe </a>
-        </li>
-        <div class="relative hover-trigger" style="margin-right: 5px">
-        <button class="block h-12 w-12 rounded-full overflow-hidden focus:outline-none">
-      <img class="h-full w-full object-cover" src="https://eu.ui-avatars.com/api/?name=John&size=1000" alt="avatar">
-    </button>
-      <div class="absolute px-6 py-2 hover-target">
-       <div class="absolute right-0 w-40 mt-2 py-1 bg-white border rounded shadow-xl">   
-      <a href="index.html" class="transition-colors duration-200 block px-4 py-2 text-normal text-gray-900 rounded hover:bg-red-500 hover:text-white">Logout</a>
-  </div>
-      </div>
-        </div>
-        <style>
-        .hover-trigger .hover-target {
-            display: none;
-        }
-
-        .hover-trigger:hover .hover-target {
-            display: block;
-        }
-        </style>
-      </ul>
-    </header>
-    <!-- header ends here -->
-
+    <%- include('./partials/navbarLogged') %> 
+    
     <main class="mt-10">
       <div class="block md:flex md:space-x-2 px-2 lg:p-0">
         <a 

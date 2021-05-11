@@ -26,7 +26,7 @@ app.set('views', path.join(__dirname, 'views'));
 //For image routing
 app.use(express.static(path.join(__dirname, 'public')));
 //Favicon fetch
-app.use('/logo.png', express.static('images/logo.png'));
+// app.use('/logo.png', express.static('images/logo.png'));
 //Parsing body
 app.use(express.urlencoded({ extended: true }));
 //Method override for HTTP
@@ -43,8 +43,17 @@ app.get('/search/?:query', async (req, res) => {
   const recipes = await Recipe.find({ title: 'Kani' });
 });
 
+app.get('/search', (req, res) => {
+  res.render('search');
+});
+
 //?Filter request
 app.get('/filter', async (req, res) => {});
+
+//Show Page
+app.get('/recipes', (req, res) => {
+  res.render('show');
+});
 
 app.get('/recipes/:id', async (req, res) => {
   const recipe = await Recipe.findById(req.params.id);
@@ -57,7 +66,7 @@ app.get('/recipes/:id/edit', async (req, res) => {
 });
 
 app.get('/new', (req, res) => {
-  res.render('posts/newRecipe');
+  res.render('posts/newPost');
 });
 
 app.get('/login', (req, res) => {
@@ -66,6 +75,10 @@ app.get('/login', (req, res) => {
 
 app.get('/signup', (req, res) => {
   res.render('signup');
+});
+
+app.get('/newPost', (req, res) => {
+  res.render('newPost');
 });
 
 app.post('/newRecipe', async (req, res) => {
