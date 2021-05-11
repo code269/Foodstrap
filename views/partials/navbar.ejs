@@ -29,6 +29,7 @@
         Demo Post
       </a>
     </li>
+    <% if(!currentUser) {%>
     <li class="px-2 md:px-4">
       <a href="login" class="text-gray-500 font-semibold hover:text-red-500">
         Log In
@@ -39,6 +40,7 @@
         Sign Up
       </a>
     </li>
+    <% } %>
   </ul>
 </header>
 <!-- header ends here -->

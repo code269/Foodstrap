@@ -32,7 +32,7 @@
                 <p class="font-semibold text-white text-sm capitalize" style="margin-left: 10px; margin-top: 6px" > 10 comments </p>
               
                 <!-- Buttons -->
-                <% if (currentUser && recipe.submittedBy.equals(currentUser)) { %> 
+                <% if (currentUser && recipe.submittedBy.equals(currentUser._id)) { %> 
                 <form>
                   <button onclick="location.href='/recipes/<%= recipe._id %>/edit'" type="button" class="px-4 py-2 bg-red-500 text-white rounded  capitalize tracking-wide" style="margin-left:59%; ">
                     Edit

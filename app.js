@@ -73,7 +73,8 @@ passport.deserializeUser(User.deserializeUser());
 
 app.get('/', async (req, res) => {
   const recipes = await Recipe.find({});
-  res.render('home', { recipes });
+  const currentUser = req.user;
+  res.render('home', { recipes, currentUser });
 });
 
 //Auth start
@@ -130,7 +131,8 @@ app.get('/filterAllergies/:allergies', async (req, res) => {
 //Show Page
 app.get('/recipes/:id', async (req, res) => {
   const recipe = await Recipe.findById(req.params.id);
-  res.render('show', { recipe });
+  const currentUser = req.user;
+  res.render('show', { recipe, currentUser });
 });
 
 app.get('/recipes/:id/edit', async (req, res) => {
