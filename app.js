@@ -23,6 +23,10 @@ db.once('open', () => {
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+//For image routing
+app.use(express.static(path.join(__dirname, 'public')));
+//Favicon fetch
+app.use('/logo.png', express.static('images/logo.png'));
 //Parsing body
 app.use(express.urlencoded({ extended: true }));
 //Method override for HTTP
@@ -76,10 +80,10 @@ app.delete('/recipes/:id', async (req, res) => {
   res.redirect('/');
 });
 
-//404 Route
-app.use((req, res) => {
-  res.status(404).send('404 Not Found!');
-});
+// //404 Route
+// app.use((req, res) => {
+//   res.status(404).send('404 Not Found!');
+// });
 
 app.listen(3000, () => {
   console.log('Listening on port 3000...');
