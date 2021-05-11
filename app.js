@@ -9,6 +9,11 @@ const mongoose = require('mongoose');
 const Recipe = require('./models/recipe');
 const methodOverride = require('method-override');
 const dbURL = process.env.DB_URL || 'mongodb://localhost:27017/foodstrap';
+const LocalStrategy = require('passport-local');
+const session = require('express-session');
+const passport = require('passport');
+const User = require('./models/user');
+const { getMaxListeners } = require('./models/recipe');
 // const morgan = require('morgan');
 
 // app.use(morgan('tiny'));
@@ -39,9 +44,36 @@ app.use(express.urlencoded({ extended: true }));
 //Method override for HTTP
 app.use(methodOverride('_method'));
 
+//Session
+const sessionConfig = {
+  secret: 'iliketoeathalal',
+  resave: false,
+  saveUnitialized: true,
+  cookie: {
+    expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+    httpOnly: true,
+    maxAge: 1000 * 60 * 60 * 24 * 7,
+  },
+};
+app.use(session(sessionConfig));
+
+//Passport
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 app.get('/', async (req, res) => {
   const recipes = await Recipe.find({});
   res.render('home', { recipes });
+});
+
+//Testing user
+app.get('/fakeUser', async (req, res) => {
+  const user = new User({ email: 'testing@gmail.com', username: 'Foodstrap' });
+  const newUser = await User.register(user, 'cookiemonster102');
+  res.send(newUser);
 });
 
 //?Search request
