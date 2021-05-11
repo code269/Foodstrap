@@ -23,14 +23,16 @@
               <img src="https://randomuser.me/api/portraits/men/97.jpg"
                 class="h-10 w-10 rounded-full mr-2 object-cover" />
               <div>
-                <p class="font-semibold text-gray-200 text-sm"> Mike Sullivan </p>
+                <p class="font-semibold text-gray-200 text-sm"> <%= !recipe.submittedBy ? 'eduard franz' : recipe.submittedBy%> </p>
                 <p class="font-semibold text-gray-400 text-xs"> 14 Aug </p>
               
               </div>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                   <i class="fa fa-heart" style="font-size:35px;color:red"></i><p class="font-semibold text-white text-sm capitalize" style="margin-left: 10px; margin-top: 6px"> 3 Likes </p>
                 <p class="font-semibold text-white text-sm capitalize" style="margin-left: 10px; margin-top: 6px" > 10 comments </p>
-
+              
+                <!-- Buttons -->
+                <% if (currentUser && recipe.submittedBy.equals(currentUser)) { %> 
                 <form>
                   <button onclick="location.href='/recipes/<%= recipe._id %>/edit'" type="button" class="px-4 py-2 bg-red-500 text-white rounded  capitalize tracking-wide" style="margin-left:59%; ">
                     Edit
@@ -42,6 +44,7 @@
                     Delete
                   </button>
                 </form>
+                <% } %> 
             </div>
           </div>
         </a>

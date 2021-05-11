@@ -44,6 +44,13 @@ app.use(express.urlencoded({ extended: true }));
 //Method override for HTTP
 app.use(methodOverride('_method'));
 
+const isLoggedIn = (req, res, next) => {
+  if (!req.isAuthenticated()) {
+    return res.redirect('/login');
+  }
+  next();
+};
+
 //Session
 const sessionConfig = {
   secret: 'iliketoeathalal',
@@ -74,14 +81,26 @@ app.get('/login', (req, res) => {
   res.render('login');
 });
 
+app.post('/login', passport.authenticate('local'), (req, res) => {
+  try {
+    console.log('Successfully logged in!');
+    res.redirect('/');
+  } catch (e) {
+    console.log(e);
+    res.redirect('/login');
+  }
+});
+
 app.get('/signup', (req, res) => {
   res.render('signup');
 });
 
 app.post('/signup', async (req, res) => {
-  const { email, password } = req.body;
-  const user = new User({ email });
+  const { email, password, username } = req.body;
+  const user = new User({ email, username });
   const registeredUser = await User.register(user, password);
+  console.log(registeredUser);
+  res.redirect('/');
 });
 //Auth end
 
@@ -119,7 +138,7 @@ app.get('/recipes/:id/edit', async (req, res) => {
   res.render('editPost', { recipe });
 });
 
-app.get('/new', (req, res) => {
+app.get('/new', isLoggedIn, (req, res) => {
   res.render('newPost');
 });
 
@@ -129,6 +148,7 @@ app.get('/about', (req, res) => {
 
 app.post('/newRecipe', async (req, res) => {
   const recipe = new Recipe(req.body.newRecipe);
+  recipe.submittedBy = req.user;
   await recipe.save();
   res.redirect(`/recipes/${recipe._id}`);
 });

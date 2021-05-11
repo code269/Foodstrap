@@ -37,21 +37,24 @@
       class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl"
     >
       <section>
-        <h3 class="font-bold text-2xl">Welcome to Foodstrap</h3>
-        <p class="text-gray-600 pt-2">Log in to your account</p>
+        <h3 class="font-bold text-2xl">Log In</h3>
+        <p class="text-gray-600 pt-2">Create your free FoodStrap account.</p>
       </section>
 
       <section class="mt-10">
-        <form class="flex flex-col" method="POST" action="#">
+        <!-- Form -->
+        <form class="flex flex-col" method="POST" action="/login">
           <div class="mb-6 pt-3 rounded bg-gray-200">
             <label
               class="block text-gray-700 text-sm font-bold mb-2 ml-3"
-              for="email"
-              >Email</label
+              for="username"
+              >Username</label
             >
             <input
               type="text"
-              id="email"
+              name="username"
+              id="username"
+              required
               class="
                 bg-gray-200
                 rounded
@@ -76,6 +79,8 @@
             <input
               type="password"
               id="password"
+              name="password"
+              required
               class="
                 bg-gray-200
                 rounded
@@ -90,18 +95,6 @@
                 pb-3
               "
             />
-          </div>
-          <div class="flex justify-end">
-            <a
-              href="#"
-              class="
-                text-sm text-red-500
-                hover:text-red-600
-                hover:underline
-                mb-6
-              "
-              >Forgot your password?</a
-            >
           </div>
           <button
             class="
