@@ -48,7 +48,12 @@ app.get('/search', (req, res) => {
 });
 
 //?Filter request
-app.get('/filter', async (req, res) => {});
+app.get('/filter/:cuisine', async (req, res) => {
+  const recipes = await Recipe.find({
+    cuisine: req.params.cuisine,
+  });
+  res.render('filter', { recipes });
+});
 
 //Show Page
 app.get('/recipes/:id', async (req, res) => {
