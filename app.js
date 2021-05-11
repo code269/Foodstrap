@@ -51,13 +51,9 @@ app.get('/search', (req, res) => {
 app.get('/filter', async (req, res) => {});
 
 //Show Page
-app.get('/recipes', (req, res) => {
-  res.render('show');
-});
-
 app.get('/recipes/:id', async (req, res) => {
   const recipe = await Recipe.findById(req.params.id);
-  res.render('posts/showRecipe', { recipe });
+  res.render('show', { recipe });
 });
 
 app.get('/recipes/:id/edit', async (req, res) => {
