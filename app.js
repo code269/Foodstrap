@@ -119,6 +119,8 @@ app.use((req, res) => {
   res.status(404).render('404');
 });
 
-app.listen(3000, () => {
-  console.log('Listening on port 3000...');
+//Decides either Heroku or local machine port
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Listening on port ${port}...`);
 });
