@@ -92,6 +92,11 @@ app.post('/login', passport.authenticate('local'), (req, res) => {
   }
 });
 
+app.get('/about', (req, res) => {
+  const currentUser = req.user;
+  res.render('about', { currentUser });
+});
+
 app.get('/signup', (req, res) => {
   res.render('signup');
 });
@@ -142,10 +147,6 @@ app.get('/recipes/:id/edit', async (req, res) => {
 
 app.get('/new', isLoggedIn, (req, res) => {
   res.render('newPost');
-});
-
-app.get('/about', (req, res) => {
-  res.render('about');
 });
 
 app.post('/newRecipe', async (req, res) => {
